@@ -1,8 +1,8 @@
 # excel-mac2016-macros
 
-<b>Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)<b>
+<h5><b>Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)</b></h5>
 
-Action; Description
+<h6>Action; Description</h6>
 
 align right ; formats cell
 
