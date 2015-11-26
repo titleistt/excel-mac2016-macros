@@ -4,9 +4,9 @@
 
 <h6>Action; Description</h6>
 
-align right; formats cell
+align right; formats cell(s)
 
-center across selection; formats cell
+center across selection; formats cell(s)
 
 date format; m/d/yy, mm/dd/yy, mmm-yy 
 
@@ -26,8 +26,8 @@ navigate: first worksheet; selects active cell in farthest left worksheet
 
 navigate: last worksheet; selects active cell in farthest right worksheet
 
-single accounting underline (format)
+single accounting underline; formats cell(s)
 
-wrap text ; formats cell
+wrap text ; formats cell(s)
 
 zoom cycle ; cycles zoom 75%, 125%, 100%
