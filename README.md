@@ -1,18 +1,18 @@
 # excel-mac2016-macros
 
-Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)
+<b>Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)<b>
 
 Action; Description
 
-align right (format) 
+align right ; formats cell
 
-center across selection (format)
+center across selection ; formats cell
 
 date format; m/d/yy, mm/dd/yy, mmm-yy 
 
 decimal cycle; no decimals, one decimal
 
-error wrapper ("NA”); adds iferror wrapper to selected cells using ‘NA’
+error wrapper ("NA”); adds iferror() wrapper to selected cells using ‘NA’
 
 fill cycle; peach-orange, gray, yellow
 
@@ -28,6 +28,6 @@ navigate: last worksheet; selects active cell in farthest right worksheet
 
 single accounting underline (format)
 
-wrap text (format)
+wrap text ; formats cell
 
-zoom cycle (75%, 125%, 100%)
+zoom cycle ; cycles zoom 75%, 125%, 100%
