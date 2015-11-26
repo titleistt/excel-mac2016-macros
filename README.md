@@ -4,9 +4,9 @@
 
 <h6>Action; Description</h6>
 
-align right ; formats cell
+align right; formats cell
 
-center across selection ; formats cell
+center across selection; formats cell
 
 date format; m/d/yy, mm/dd/yy, mmm-yy 
 
