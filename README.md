@@ -7,8 +7,8 @@
 * align right; formats cell(s)
 * center across selection; formats cell(s)
 * date format; m/d/yy, mm/dd/yy, mmm-yy 
-* decimal cycle; no decimals, one decimal
-* error wrapper ("NA”); adds iferror() wrapper to selected cells using ‘NA’
+* number cycle; number, dollar, percent
+* error wrapper ("-”); adds iferror() wrapper to selected cells using ‘-’
 * fill cycle; peach-orange, gray, yellow
 * font color cycle; blue, red, green, purple, black
 * gridlines toggle; gridlines off, gridlines on
