@@ -1,5 +1,5 @@
 '
-' Wrap Text
+' Wrap Text, W
 '
 Sub Format_WrapText()
 If ActiveCell.WrapText = False Then
@@ -9,7 +9,7 @@ Else
 End If
 End Sub
 '
-' Single Accounting Format
+' Single Accounting Format, U
 '
 Sub Format_SingleAccounting()
     With Selection.Font
@@ -17,21 +17,21 @@ Sub Format_SingleAccounting()
     End With
 End Sub
 '
-' Align Right
+' Align Right, R
 '
-Sub Align_Right()
+Sub Format_Align_Right()
     ExecuteExcel4Macro "ALIGNMENT(4,FALSE,3,FALSE,FALSE,,FALSE,FALSE,0,1)"
 End Sub
 '
-' Center Across Selection
+' Center Across Selection, C
 '
-Sub Align_CenterAcrossSelection()
+Sub Format_Align_CenterAcrossSelection()
     With Selection
         .HorizontalAlignment = xlCenterAcrossSelection
     End With
 End Sub
 '
-' Format_FillCycle
+' Format_FillCycle, L
 '
 Sub Format_FillCycle()
     If Selection.Interior.Color = 16777215 Then
@@ -44,7 +44,7 @@ Sub Format_FillCycle()
         End If
 End Sub
 '
-' Format_FontCycle
+' Format_FontColorCycle, K
 '
 Sub Format_FontCycle()
     If Selection.Font.Color = 0 Then
@@ -59,7 +59,7 @@ Sub Format_FontCycle()
         End If
 End Sub
 '
-' Format_IndentCycle
+' Format_IndentCycle, I
 '
 Sub Format_IndentCycle()
     If Selection.IndentLevel <= 4 Then
@@ -68,20 +68,22 @@ Sub Format_IndentCycle()
     End If
 End Sub
 '
-' Format_Decimal_Cycle
+' Format_NumberCycle, N
 '
-Sub Format_Decimal_Cycle()
-    If Selection.NumberFormat = "#,##0" Then
-       Selection.NumberFormat = "#,##0.0"
-    ElseIf Selection.NumberFormat = "#,##0.0" Then
+Sub Format_NumberCycle()
+    If Selection.NumberFormat = "_(#,##0_);_((#,##0);_(""-""_)" Then
+       Selection.NumberFormat = "_($* #,##0_);_($* (#,##0);_($* ""-""_)"
+    ElseIf Selection.NumberFormat = "_($* #,##0_);_($* (#,##0);_($* ""-""_)" Then
+        Selection.NumberFormat = "0.0%_);(0.0%);""-""_)"
+    ElseIf Selection.NumberFormat = "0.0%_);(0.0%);""-""_)" Then
         Selection.NumberFormat = General
-    Else: Selection.NumberFormat = "#,##0"
+    Else: Selection.NumberFormat = "_(#,##0_);_((#,##0);_(""-""_)"
     End If
 End Sub
 '
 ' DateCycle Macro
 '
-Sub DateCycle()
+Sub Format_DateCycle()
     If Selection.NumberFormat = "m/d/yy" Then
         Selection.NumberFormat = "mm/dd/yy"
     ElseIf Selection.NumberFormat = "mm/dd/yy" Then
@@ -90,18 +92,18 @@ Sub DateCycle()
     End If
 End Sub
 '
-' Gridlines Toggle
+' Gridlines Toggle, G
 '
-Sub GridlinesToggleSub()
+Sub Action_GridlinesToggleSub()
     If ActiveWindow.DisplayGridlines = True Then
         ActiveWindow.DisplayGridlines = False
     Else: ActiveWindow.DisplayGridlines = True
     End If
 End Sub
 '
-' Zoom Toggle
+' Zoom Toggle, Z
 '
-Sub ZoomToggle()
+Sub Action_ZoomToggle()
     If ActiveWindow.Zoom = 100 Then
         ActiveWindow.Zoom = 75
     ElseIf ActiveWindow.Zoom = 75 Then
@@ -110,9 +112,9 @@ Sub ZoomToggle()
     End If
 End Sub
 '
-' Error Wrapper
+' Error Wrapper, E
 '
-Sub ErrorWrapper()
+Sub Action_ErrorWrapper()
 Dim myCell As Range
     For Each myCell In Selection.Cells
         If myCell.HasFormula And Not myCell.HasArray Then
@@ -121,37 +123,37 @@ Dim myCell As Range
     Next
 End Sub
 '
-' Navigate last sheet
+' Navigate last sheet, P
 '
-Sub NavigateLastSheet()
+Sub Action_NavigateLastSheet()
     Sheets(Sheets.Count).Select
 End Sub
 '
-' Navigate first sheet
+' Navigate first sheet, O
 '
-Sub NavigateFirstSheet()
+Sub Action_NavigateFirstSheet()
     Sheets(1).Select
 End Sub
 '
-' Paste Values
+' Paste Values, V
 '
-Sub PasteValues()
+Sub Action_PasteValues()
 Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
 :=False, Transpose:=False
 Application.CutCopyMode = False
 End Sub
 '
-' Paste Formulas
+' Paste Formulas, F
 '
-Sub PasteFormulas()
+Sub Action_PasteFormulas()
 Selection.PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, SkipBlanks _
 :=False, Transpose:=False
 Application.CutCopyMode = False
 End Sub
 '
-' Paste Formats
+' Paste Formats, T
 '
-Sub PasteFormats()
+Sub Action_PasteFormats()
 Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, SkipBlanks _
 :=False, Transpose:=False
 Application.CutCopyMode = False
