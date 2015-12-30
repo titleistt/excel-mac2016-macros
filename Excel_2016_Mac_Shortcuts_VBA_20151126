@@ -3,132 +3,156 @@
 '
 Sub Format_WrapText()
 If ActiveCell.WrapText = False Then
-    Selection.WrapText = True
+    Selection.WrapText = True
 Else
-    Selection.WrapText = False
+    Selection.WrapText = False
 End If
 End Sub
 '
 ' Single Accounting Format
 '
 Sub Format_SingleAccounting()
-    With Selection.Font
-     .Underline = xlUnderlineStyleSingleAccounting
-    End With
+    With Selection.Font
+     .Underline = xlUnderlineStyleSingleAccounting
+    End With
 End Sub
 '
 ' Align Right
 '
 Sub Align_Right()
-    ExecuteExcel4Macro "ALIGNMENT(4,FALSE,3,FALSE,FALSE,,FALSE,FALSE,0,1)"
+    ExecuteExcel4Macro "ALIGNMENT(4,FALSE,3,FALSE,FALSE,,FALSE,FALSE,0,1)"
 End Sub
 '
 ' Center Across Selection
 '
 Sub Align_CenterAcrossSelection()
-    With Selection
-        .HorizontalAlignment = xlCenterAcrossSelection
-    End With
+    With Selection
+        .HorizontalAlignment = xlCenterAcrossSelection
+    End With
 End Sub
 '
 ' Format_FillCycle
 '
 Sub Format_FillCycle()
-    If Selection.Interior.Color = 16777215 Then
-        Selection.Interior.Color = 11389944
-    ElseIf Selection.Interior.Color = 11389944 Then
-        Selection.Interior.Color = 12566463
-    ElseIf Selection.Interior.Color = 12566463 Then
-        Selection.Interior.Color = 65535
-    Else: Selection.Interior.Color = 16777215
-        End If
+    If Selection.Interior.Color = 16777215 Then
+        Selection.Interior.Color = 11389944
+    ElseIf Selection.Interior.Color = 11389944 Then
+        Selection.Interior.Color = 12566463
+    ElseIf Selection.Interior.Color = 12566463 Then
+        Selection.Interior.Color = 65535
+    Else: Selection.Interior.Color = 16777215
+        End If
 End Sub
 '
 ' Format_FontCycle
 '
 Sub Format_FontCycle()
-    If Selection.Font.Color = 0 Then
-        Selection.Font.Color = 16724484
-    ElseIf Selection.Font.Color = 16724484 Then
-        Selection.Font.Color = 255
-    ElseIf Selection.Font.Color = 255 Then
-        Selection.Font.Color = 39168
-    ElseIf Selection.Font.Color = 39168 Then
-        Selection.Font.Color = 10498160
-    Else: Selection.Font.Color = 0
-        End If
+    If Selection.Font.Color = 0 Then
+        Selection.Font.Color = 16724484
+    ElseIf Selection.Font.Color = 16724484 Then
+        Selection.Font.Color = 255
+    ElseIf Selection.Font.Color = 255 Then
+        Selection.Font.Color = 39168
+    ElseIf Selection.Font.Color = 39168 Then
+        Selection.Font.Color = 10498160
+    Else: Selection.Font.Color = 0
+        End If
 End Sub
 '
 ' Format_IndentCycle
 '
 Sub Format_IndentCycle()
-    If Selection.IndentLevel <= 4 Then
-        Selection.IndentLevel = Selection.IndentLevel + 1
-    Else: Selection.IndentLevel = 0
-    End If
+    If Selection.IndentLevel <= 4 Then
+        Selection.IndentLevel = Selection.IndentLevel + 1
+    Else: Selection.IndentLevel = 0
+    End If
 End Sub
 '
 ' Format_Decimal_Cycle
 '
 Sub Format_Decimal_Cycle()
-    If Selection.NumberFormat = "#,###" Then
-       Selection.NumberFormat = "#,###.0"
-    ElseIf Selection.NumberFormat = "#,###.0" Then
-        Selection.NumberFormat = General
-    Else: Selection.NumberFormat = "#,###"
-    End If
+    If Selection.NumberFormat = "#,##0" Then
+       Selection.NumberFormat = "#,##0.0"
+    ElseIf Selection.NumberFormat = "#,##0.0" Then
+        Selection.NumberFormat = General
+    Else: Selection.NumberFormat = "#,##0"
+    End If
 End Sub
 '
 ' DateCycle Macro
 '
 Sub DateCycle()
-    If Selection.NumberFormat = "m/d/yy" Then
-        Selection.NumberFormat = "mm/dd/yy"
-    ElseIf Selection.NumberFormat = "mm/dd/yy" Then
-        Selection.NumberFormat = "mmm-yy"
-    Else: Selection.NumberFormat = "m/d/yy"
-    End If
+    If Selection.NumberFormat = "m/d/yy" Then
+        Selection.NumberFormat = "mm/dd/yy"
+    ElseIf Selection.NumberFormat = "mm/dd/yy" Then
+        Selection.NumberFormat = "mmm-yy"
+    Else: Selection.NumberFormat = "m/d/yy"
+    End If
 End Sub
 '
 ' Gridlines Toggle
 '
 Sub GridlinesToggleSub()
-    If ActiveWindow.DisplayGridlines = True Then
-        ActiveWindow.DisplayGridlines = False
-    Else: ActiveWindow.DisplayGridlines = True
-    End If
+    If ActiveWindow.DisplayGridlines = True Then
+        ActiveWindow.DisplayGridlines = False
+    Else: ActiveWindow.DisplayGridlines = True
+    End If
 End Sub
 '
 ' Zoom Toggle
 '
 Sub ZoomToggle()
-    If ActiveWindow.Zoom = 100 Then
-        ActiveWindow.Zoom = 75
-    ElseIf ActiveWindow.Zoom = 75 Then
-        ActiveWindow.Zoom = 125
-    Else: ActiveWindow.Zoom = 100
-    End If
+    If ActiveWindow.Zoom = 100 Then
+        ActiveWindow.Zoom = 75
+    ElseIf ActiveWindow.Zoom = 75 Then
+        ActiveWindow.Zoom = 125
+    Else: ActiveWindow.Zoom = 100
+    End If
 End Sub
 '
 ' Error Wrapper
 '
 Sub ErrorWrapper()
 Dim myCell As Range
-    For Each myCell In Selection.Cells
-        If myCell.HasFormula And Not myCell.HasArray Then
-            myCell.Formula = "=IFERROR(" & Right(myCell.Formula, Len(myCell.Formula) - 1) & "," & Chr(34) & "NA" & Chr(34) & ")"
-        End If
-    Next
+    For Each myCell In Selection.Cells
+        If myCell.HasFormula And Not myCell.HasArray Then
+            myCell.Formula = "=IFERROR(" & Right(myCell.Formula, Len(myCell.Formula) - 1) & "," & Chr(34) & "-" & Chr(34) & ")"
+        End If
+    Next
 End Sub
 '
 ' Navigate last sheet
 '
 Sub NavigateLastSheet()
-    Sheets(Sheets.Count).Select
+    Sheets(Sheets.Count).Select
 End Sub
 '
 ' Navigate first sheet
 '
 Sub NavigateFirstSheet()
-    Sheets(1).Select
+    Sheets(1).Select
+End Sub
+'
+' Paste Values
+'
+Sub PasteValues()
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
+End Sub
+'
+' Paste Formulas
+'
+Sub PasteFormulas()
+Selection.PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
+End Sub
+'
+' Paste Formats
+'
+Sub PasteFormats()
+Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
 End Sub
