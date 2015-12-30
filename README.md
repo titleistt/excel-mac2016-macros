@@ -23,4 +23,4 @@
 Recommended shortcut keys:
 
 ![Image of shortcut keys]
-(http://f.cl.ly/items/0i2C2R2w1i0p3j0d2W38/Image%202015-12-30%20at%2011.52.41%20AM.png)
+(http://f.cl.ly/items/3S1y0J1e000X3o342116/Screenshot%202015-12-30%2011.57.05.png)
