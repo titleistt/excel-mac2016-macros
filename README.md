@@ -1,6 +1,6 @@
-<h1> Customize your Microsoft Excel for Mac with keyboard shortcuts </h1>
+<h1>Customize your Microsoft Excel for Mac with keyboard shortcuts</h1>
 
-<h2> Set up instructions </h2>
+<h2>Set up instructions</h2>
 - Download file 'Personal_Macro_Workbook_VBA'. Copy contents into a new module in 'Personal Macro Workbook'
 - Download file 'Open_Workbook_VBA'. Copy contents into 'Personal Macro Workbook' 'ThisWorkbook' Object
 - See the following link for instructions accessing your Personal Macro Workbook on your computer.
