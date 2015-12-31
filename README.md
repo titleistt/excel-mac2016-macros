@@ -2,7 +2,6 @@
 
 <h5><b>Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)</b></h5>
 
-<h6>Action; Description</h6>
 Action | Description | Shortcut
 ----- | ------------- | ------
 Action_ErrorWrapper | Error wrapper ("-”); adds iferror( ) wrapper to selected cells using ‘-’ | Ctrl + Shift + E
