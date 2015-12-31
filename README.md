@@ -3,24 +3,23 @@
 <h5><b>Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)</b></h5>
 
 <h6>Action; Description</h6>
-
-* align right; formats cell(s)
-* center across selection; formats cell(s)
-* date format; m/d/yy, mm/dd/yy, mmm-yy 
-* number cycle; number, dollar, percent
-* error wrapper ("-”); adds iferror() wrapper to selected cells using ‘-’
-* fill cycle; peach-orange, gray, yellow
-* font color cycle; blue, red, green, purple, black
-* gridlines toggle; gridlines off, gridlines on
-* indent cycle; increments indent up to 4, then resets to 0
-* navigate: first worksheet; selects active cell in farthest left worksheet 
-* navigate: last worksheet; selects active cell in farthest right worksheet
-* paste special: from clipboard (paste special values / formats / formulas)
-* single accounting underline; formats cell(s)
-* wrap text ; formats cell(s)
-* zoom cycle ; cycles zoom 75%, 125%, 100%
-
-Recommended shortcut keys:
-
-![Image of shortcut keys]
-(http://f.cl.ly/items/3S1y0J1e000X3o342116/Screenshot%202015-12-30%2011.57.05.png)
+Action | Description | Shortcut
+----- | ------------- | ------
+Action_ErrorWrapper | Error wrapper ("-”); adds iferror( ) wrapper to selected cells using ‘-’ | Ctrl + Shift + E
+Action_GridlinesToggleSub | Toggle gridlines off, gridlines on | Ctrl + Shift + G
+Action_NavigateFirstSheet | Selects active cell in first (leftmost) worksheet | Ctrl + Shift + [
+Action_NavigateLastSheet | Selects active cell in last (rightmost) worksheet | Ctrl + Shift + ]
+Action_PasteFormats | Paste special formats from active clipboard | Ctrl + Shift + T
+Action_PasteFormulas | Paste special formulas from active clipboard | Ctrl + Shift + F
+Action_PasteValues | Paste special formulas from active clipboard | Ctrl + Shift + V
+Action_ZoomToggle | Cycles zoom 75%, 125%, 100% | Ctrl + Shift + Z
+<b> Format macros </b> | <b> Formats active cell(s) </b> | Shortcut Key
+Format_Align_CenterAcrossSelection | Center across selection | Ctrl + Shift + C
+Format_Align_Right | Right horizontal alignment | Ctrl + Shift + R
+Format_DateCycle | Cycle date format: m/d/yy, mm/dd/yy, mmm-yy | Ctrl + Shift + 2
+Format_FillCycle | Cycle cell background: peach-orange, gray, yellow, white | Ctrl + Shift + K
+Format_FontCycle | Cycle font color: blue, red, green, purple, black | Ctrl + Shift + L
+Format_IndentCycle | Cycle indent (1, 2, 3, 4, 0) | Ctrl + Shift + I
+Format_NumberCycle | Cycle number formats: Number, Currency ($), Percentage | Ctrl + Shift + 1
+Format_SingleAccounting | Single Accounting format | Ctrl + Shift + U
+Format_WrapText | Wrap text format | Ctrl + Shift + W
