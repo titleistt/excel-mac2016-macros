@@ -1,12 +1,13 @@
-<h4> Customize your Microsoft Excel for Mac with keyboard shortcuts </h4>
+<h1> Customize your Microsoft Excel for Mac with keyboard shortcuts </h1>
 
-Set up instructions:
+<h2> Set up instructions </h2>
 - Download file 'Personal_Macro_Workbook_VBA'. Copy contents into a new module in 'Personal Macro Workbook'
 - Download file 'Open_Workbook_VBA'. Copy contents into 'Personal Macro Workbook' 'ThisWorkbook' Object
 - See the following link for instructions accessing your Personal Macro Workbook on your computer.
   - https://support.office.com/en-nz/article/Copy-your-macros-to-a-Personal-Macro-Workbook-aa439b90-f836-4381-97f0-6e4c3f5ee566
 - Use Alt + F11 to access VBA editor and Alt + F8 to access the Excel macro dialogue box
 
+<h2> Default shortcuts </h2>
 Action | Description | Shortcut
 ----- | ------------- | ------
 Action_ErrorWrapper | Error wrapper ("-”); adds iferror( ) wrapper to selected cells using ‘-’ | Ctrl + Shift + E
@@ -17,7 +18,7 @@ Action_PasteFormats | Paste special formats from active clipboard | Ctrl + Shift
 Action_PasteFormulas | Paste special formulas from active clipboard | Ctrl + Shift + F
 Action_PasteValues | Paste special formulas from active clipboard | Ctrl + Shift + V
 Action_ZoomToggle | Cycles zoom 75%, 125%, 100% | Ctrl + Shift + Z
-<b> Format macros </b> | <b> Formats active cell(s) </b> | Shortcut Key
+<b> Format macros </b> | <b> Formats active cell(s) </b> | 
 Format_Align_CenterAcrossSelection | Center across selection | Ctrl + Shift + C
 Format_Align_Right | Right horizontal alignment | Ctrl + Shift + R
 Format_DateCycle | Cycle date format: m/d/yy, mm/dd/yy, mmm-yy | Ctrl + Shift + 2
