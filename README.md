@@ -1,11 +1,11 @@
+<h4> Customize your Microsoft Excel for Mac with keyboard shortcuts </h4>
+
 Set up instructions:
 - Download file 'Personal_Macro_Workbook_VBA'. Copy contents into a new module in 'Personal Macro Workbook'
 - Download file 'Open_Workbook_VBA'. Copy contents into 'Personal Macro Workbook' 'ThisWorkbook' Object
 - See the following link for instructions accessing your Personal Macro Workbook on your computer.
   - https://support.office.com/en-nz/article/Copy-your-macros-to-a-Personal-Macro-Workbook-aa439b90-f836-4381-97f0-6e4c3f5ee566
 - Use Alt + F11 to access VBA editor and Alt + F8 to access the Excel macro dialogue box
-
-<h5><b>Keyboard shortcuts for Mac Excel 2016; Description of VBA module subs (alphabetical order)</b></h5>
 
 Action | Description | Shortcut
 ----- | ------------- | ------
