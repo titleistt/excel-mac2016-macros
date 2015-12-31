@@ -1,29 +1,61 @@
 '
-' Wrap Text, W
+' Gridlines Toggle
 '
-Sub Format_WrapText()
-If ActiveCell.WrapText = False Then
-    Selection.WrapText = True
-Else
-    Selection.WrapText = False
-End If
+Sub Action_GridlinesToggleSub()
+    If ActiveWindow.DisplayGridlines = True Then
+        ActiveWindow.DisplayGridlines = False
+    Else: ActiveWindow.DisplayGridlines = True
+    End If
 End Sub
 '
-' Single Accounting Format, U
+' Navigate first sheet
 '
-Sub Format_SingleAccounting()
-    With Selection.Font
-     .Underline = xlUnderlineStyleSingleAccounting
-    End With
+Sub Action_NavigateFirstSheet()
+    Sheets(1).Select
 End Sub
 '
-' Align Right, R
+' Navigate last sheet
 '
-Sub Format_Align_Right()
-    ExecuteExcel4Macro "ALIGNMENT(4,FALSE,3,FALSE,FALSE,,FALSE,FALSE,0,1)"
+Sub Action_NavigateLastSheet()
+    Sheets(Sheets.Count).Select
 End Sub
 '
-' Center Across Selection, C
+' Paste Formats
+'
+Sub Action_PasteFormats()
+Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
+End Sub
+'
+' Paste Formulas
+'
+Sub Action_PasteFormulas()
+Selection.PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
+End Sub
+'
+' Paste Values
+'
+Sub Action_PasteValues()
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+:=False, Transpose:=False
+Application.CutCopyMode = False
+End Sub
+'
+' Zoom Toggle
+'
+Sub Action_ZoomToggle()
+    If ActiveWindow.Zoom = 100 Then
+        ActiveWindow.Zoom = 75
+    ElseIf ActiveWindow.Zoom = 75 Then
+        ActiveWindow.Zoom = 125
+    Else: ActiveWindow.Zoom = 100
+    End If
+End Sub
+'
+' Center Across Selection
 '
 Sub Format_Align_CenterAcrossSelection()
     With Selection
@@ -31,7 +63,35 @@ Sub Format_Align_CenterAcrossSelection()
     End With
 End Sub
 '
-' Format_FillCycle, L
+' Align Right
+'
+Sub Format_Align_Right()
+    ExecuteExcel4Macro "ALIGNMENT(4,FALSE,3,FALSE,FALSE,,FALSE,FALSE,0,1)"
+End Sub
+'
+' DateCycle Macro
+'
+Sub Format_DateCycle()
+    If Selection.NumberFormat = "m/d/yy" Then
+        Selection.NumberFormat = "mm/dd/yy"
+    ElseIf Selection.NumberFormat = "mm/dd/yy" Then
+        Selection.NumberFormat = "mmm-yy"
+    Else: Selection.NumberFormat = "m/d/yy"
+    End If
+End Sub
+'
+' Error Wrapper
+'
+Sub Action_ErrorWrapper()
+Dim myCell As Range
+    For Each myCell In Selection.Cells
+        If myCell.HasFormula And Not myCell.HasArray Then
+            myCell.Formula = "=IFERROR(" & Right(myCell.Formula, Len(myCell.Formula) - 1) & "," & Chr(34) & "-" & Chr(34) & ")"
+        End If
+    Next
+End Sub
+'
+' Format_FillCycle
 '
 Sub Format_FillCycle()
     If Selection.Interior.Color = 16777215 Then
@@ -44,7 +104,7 @@ Sub Format_FillCycle()
         End If
 End Sub
 '
-' Format_FontColorCycle, K
+' Format_FontColorCycle
 '
 Sub Format_FontCycle()
     If Selection.Font.Color = 0 Then
@@ -59,7 +119,7 @@ Sub Format_FontCycle()
         End If
 End Sub
 '
-' Format_IndentCycle, I
+' Format_IndentCycle
 '
 Sub Format_IndentCycle()
     If Selection.IndentLevel <= 4 Then
@@ -68,7 +128,7 @@ Sub Format_IndentCycle()
     End If
 End Sub
 '
-' Format_NumberCycle, N
+' Format_NumberCycle
 '
 Sub Format_NumberCycle()
     If Selection.NumberFormat = "_(#,##0_);_((#,##0);_(""-""_)" Then
@@ -81,80 +141,20 @@ Sub Format_NumberCycle()
     End If
 End Sub
 '
-' DateCycle Macro
+' Single Accounting Format
 '
-Sub Format_DateCycle()
-    If Selection.NumberFormat = "m/d/yy" Then
-        Selection.NumberFormat = "mm/dd/yy"
-    ElseIf Selection.NumberFormat = "mm/dd/yy" Then
-        Selection.NumberFormat = "mmm-yy"
-    Else: Selection.NumberFormat = "m/d/yy"
-    End If
+Sub Format_SingleAccounting()
+    With Selection.Font
+     .Underline = xlUnderlineStyleSingleAccounting
+    End With
 End Sub
 '
-' Gridlines Toggle, G
+' Wrap Text
 '
-Sub Action_GridlinesToggleSub()
-    If ActiveWindow.DisplayGridlines = True Then
-        ActiveWindow.DisplayGridlines = False
-    Else: ActiveWindow.DisplayGridlines = True
-    End If
-End Sub
-'
-' Zoom Toggle, Z
-'
-Sub Action_ZoomToggle()
-    If ActiveWindow.Zoom = 100 Then
-        ActiveWindow.Zoom = 75
-    ElseIf ActiveWindow.Zoom = 75 Then
-        ActiveWindow.Zoom = 125
-    Else: ActiveWindow.Zoom = 100
-    End If
-End Sub
-'
-' Error Wrapper, E
-'
-Sub Action_ErrorWrapper()
-Dim myCell As Range
-    For Each myCell In Selection.Cells
-        If myCell.HasFormula And Not myCell.HasArray Then
-            myCell.Formula = "=IFERROR(" & Right(myCell.Formula, Len(myCell.Formula) - 1) & "," & Chr(34) & "-" & Chr(34) & ")"
-        End If
-    Next
-End Sub
-'
-' Navigate last sheet, P
-'
-Sub Action_NavigateLastSheet()
-    Sheets(Sheets.Count).Select
-End Sub
-'
-' Navigate first sheet, O
-'
-Sub Action_NavigateFirstSheet()
-    Sheets(1).Select
-End Sub
-'
-' Paste Values, V
-'
-Sub Action_PasteValues()
-Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-:=False, Transpose:=False
-Application.CutCopyMode = False
-End Sub
-'
-' Paste Formulas, F
-'
-Sub Action_PasteFormulas()
-Selection.PasteSpecial Paste:=xlPasteFormulas, Operation:=xlNone, SkipBlanks _
-:=False, Transpose:=False
-Application.CutCopyMode = False
-End Sub
-'
-' Paste Formats, T
-'
-Sub Action_PasteFormats()
-Selection.PasteSpecial Paste:=xlPasteFormats, Operation:=xlNone, SkipBlanks _
-:=False, Transpose:=False
-Application.CutCopyMode = False
+Sub Format_WrapText()
+If ActiveCell.WrapText = False Then
+    Selection.WrapText = True
+Else
+    Selection.WrapText = False
+End If
 End Sub
