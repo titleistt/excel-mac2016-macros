@@ -22,8 +22,8 @@ Action_ZoomToggle | Cycles zoom 75%, 125%, 100% | Ctrl + Shift + Z
 Format_Align_CenterAcrossSelection | Center across selection | Ctrl + Shift + C
 Format_Align_Right | Right horizontal alignment | Ctrl + Shift + R
 Format_DateCycle | Cycle date format: m/d/yy, mm/dd/yy, mmm-yy | Ctrl + Shift + 2
-Format_FillCycle | Cycle cell background: peach-orange, gray, yellow, white | Ctrl + Shift + K
-Format_FontCycle | Cycle font color: blue, red, green, purple, black | Ctrl + Shift + L
+Format_FillCycle | Cycle cell background: peach-orange, gray, yellow, white | Ctrl + Shift + L
+Format_FontCycle | Cycle font color: blue, red, green, purple, black | Ctrl + Shift + ;
 Format_IndentCycle | Cycle indent (1, 2, 3, 4, 0) | Ctrl + Shift + I
 Format_NumberCycle | Cycle number formats: Number, Currency ($), Percentage | Ctrl + Shift + 1
 Format_SingleAccounting | Single Accounting format | Ctrl + Shift + U
